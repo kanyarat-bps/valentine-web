@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Be My Valentine?</title>
+<style>
+body {
+text-align: center;
+font-family: Arial, sans-serif;
+background-color: #ffe6e6;
+margin-top: 100px;
+}
+.container {
+display: inline-block;
+background: white;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+color: #ff4d4d;
+}
+.btn {
+font-size: 20px;
+padding: 10px 20px;
+margin: 10px;
+border: none;
+cursor: pointer;
+border-radius: 5px;
+}
+#yes {
+background-color: #ff4d4d;
+color: white;
+}
+#no {
+background-color: #666;
+color: white;
+position: absolute;
+}
+  #initialImage {
+    width: 30%;
+    height: auto;
+	}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h1>Will you be my Valentine? ❤️ </h1>
+ <h2><img id="initialImage" src="images/img_6682.jpg" class="img-fluid"></h2>
+
+    <!-- ปุ่ม Yes -->
+    <button id="yes" class="btn" onclick="showAlert()">Yes</button>
+
+    <!-- ปุ่ม No ที่เคลื่อนที่ได้ -->
+    <button id="no" class="btn" onmouseover="moveButton()">No</button>
+</div>
+
+<script>
+// ฟังก์ชันแสดง alert
+function showAlert() {
+    alert('Yay! ❤️ ');
+    
+    // หลังจากปิด alert แล้วจะแทนที่รูปภาพในตำแหน่งเดิม
+    var initialImage = document.getElementById("initialImage");
+
+    // เปลี่ยนแหล่งรูปภาพใหม่
+    initialImage.src = "images/img_6680.jpg"; // เปลี่ยน URL ของรูปภาพที่จะแสดง
+}
+
+
+
+function moveButton() {
+let x = Math.random() * (window.innerWidth - 100);
+let y = Math.random() * (window.innerHeight - 100);
+let noButton = document.getElementById("no");
+noButton.style.left = `${x}px`;
+noButton.style.top = `${y}px`;
+}
+</script>
+
+</body>
+</html>
